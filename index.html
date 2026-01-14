@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Copilot - Présentation</title>
+    <!-- Utilisation de Tailwind CSS pour le style rapide et responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Styles personnalisés pour l'accessibilité et l'impression */
+        :root {
+            --primary-color: #2563eb; /* Bleu institutionnel */
+            --text-color: #1f2937;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        /* Style de l'accordéon natif */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        .accessible-focus:focus {
+            outline: 3px solid #facc15;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <!-- Logo: Chemin relatif comme demandé -->
+                <img src="logo.avif" alt="Logo de l'organisme" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/150x50?text=Logo+Formation'">
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-blue-800 leading-tight">Formation Copilot</h1>
+                    <p class="text-sm text-gray-600 hidden md:block">Optimisez votre productivité au quotidien</p>
+                </div>
+            </div>
+            <a href="#programme" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition accessible-focus">
+                Programme
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- VISUEL & ACCROCHE -->
+        <section class="relative bg-blue-900 text-white py-12 md:py-20">
+            <div class="absolute inset-0 overflow-hidden">
+                <!-- Image thématique de fond avec overlay -->
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Ambiance formation et numérique" class="w-full h-full object-cover opacity-20">
+            </div>
+            <div class="relative max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Maîtrisez l'Intelligence Artificielle</h2>
+                <p class="text-xl md:text-2xl text-blue-100 mb-8">Une formation pratique pour transformer vos méthodes de travail avec Copilot pour Microsoft 365.</p>
+                
+                <!-- Infos clés -->
+                <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                    <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                        <i class="far fa-calendar-alt mr-2"></i> 15/01/2026
+                    </span>
+                    <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Paris 13ème
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+
+            <!-- PROGRAMME (ACCORDÉON) -->
+            <section id="programme" class="scroll-mt-24">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-8 w-1 bg-blue-600 rounded"></div>
+                    <h3 class="text-2xl font-bold text-gray-800">Programme détaillé</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Module 1 -->
+                    <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 transition accessible-focus">
+                            <span class="font-semibold text-lg text-blue-900">1. Introduction à l'intelligence artificielle</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-blue-500"></i>
+                            </span>
+                        </summary>
+                        <div class="p-5 text-gray-700 border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 mb-4">
+                                <li>Compréhension des bases de l'intelligence artificielle.</li>
+                                <li>Contextualisation de Copilot dans le domaine de l'IA.</li>
+                                <li>Discussion sur les implications et les applications de l'IA dans divers secteurs.</li>
+                            </ul>
+                            <p class="text-sm bg-blue-50 p-3 rounded text-blue-800"><i class="fas fa-comments mr-2"></i><strong>Échanges :</strong> Présentation et discussion de recherches récentes et d'articles d'actualité sur l'IA et ses applications.</p>
+                        </div>
+                    </details>
+
+                    <!-- Module 2 -->
+                    <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 transition accessible-focus">
+                            <span class="font-semibold text-lg text-blue-900">2. Les clés du prompt</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-blue-500"></i>
+                            </span>
+                        </summary>
+                        <div class="p-5 text-gray-700 border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 mb-4">
+                                <li>Compréhension des concepts fondamentaux du prompt.</li>
+                                <li>Exploration des différentes techniques pour formuler des prompts efficaces.</li>
+                                <li>Analyse des avantages et des limites de l'utilisation de prompts dans l'interaction avec des modèles de langage.</li>
+                                <li>Comprendre comment les prompts influencent les sorties de Copilot.</li>
+                            </ul>
+                            <p class="text-sm bg-green-50 p-3 rounded text-green-800"><i class="fas fa-laptop-code mr-2"></i><strong>Travaux pratiques :</strong> Développer ses compétences dans l'écriture de prompts adaptés à Copilot.</p>
+                        </div>
+                    </details>
+
+                    <!-- Module 3 -->
+                    <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 transition accessible-focus">
+                            <span class="font-semibold text-lg text-blue-900">3. Découverte approfondie de Copilot</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-blue-500"></i>
+                            </span>
+                        </summary>
+                        <div class="p-5 text-gray-700 border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 mb-4">
+                                <li>Présentation des fonctionnalités de base de Copilot.</li>
+                                <li>Conditions de fonctionnement et limites.</li>
+                                <li>Démonstration des capacités de génération de texte, de calcul, de présentation et de codage assisté par Copilot.</li>
+                                <li>Exploration des fonctionnalités avancées de Copilot : traduction de langues, génération de code, etc.</li>
+                            </ul>
+                            <p class="text-sm bg-green-50 p-3 rounded text-green-800"><i class="fas fa-laptop-code mr-2"></i><strong>Travaux pratiques :</strong> Réalisation d’un résumé de document, rédaction d’un e-mail, création de formules dans Excel et conception d’une présentation.</p>
+                        </div>
+                    </details>
+
+                    <!-- Module 4 -->
+                    <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 transition accessible-focus">
+                            <span class="font-semibold text-lg text-blue-900">4. Copilot en action sur des cas concrets</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-blue-500"></i>
+                            </span>
+                        </summary>
+                        <div class="p-5 text-gray-700 border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 mb-4">
+                                <li>Études de cas sur l'utilisation de Copilot : Word, Excel, PowerPoint, Teams, Outlook, etc.</li>
+                                <li>Utilisation de Copilot pour le code VBA.</li>
+                                <li>Exploration des meilleures pratiques pour intégrer Copilot dans les flux de travail quotidiens.</li>
+                                <li>Comprendre les implications de la collaboration humain–machine dans la création et l'automatisation des tâches.</li>
+                            </ul>
+                            <p class="text-sm bg-green-50 p-3 rounded text-green-800"><i class="fas fa-laptop-code mr-2"></i><strong>Travaux pratiques :</strong> Réalisation de cas pratiques sur Word, PowerPoint, Excel, Outlook, Teams et développement de code VBA.</p>
+                        </div>
+                    </details>
+
+                    <!-- Module 5 -->
+                    <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-5 bg-gray-50 hover:bg-gray-100 transition accessible-focus">
+                            <span class="font-semibold text-lg text-blue-900">5. Sécurité et confidentialité avec Copilot</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-blue-500"></i>
+                            </span>
+                        </summary>
+                        <div class="p-5 text-gray-700 border-t border-gray-200">
+                            <ul class="list-disc pl-5 space-y-2 mb-4">
+                                <li>Données, confidentialité et sécurité pour Microsoft Copilot pour Microsoft 365.</li>
+                                <li>Bonnes pratiques pour garantir la sécurité des données lors de l'utilisation de Copilot.</li>
+                                <li>Implications de la confidentialité des données et des réglementations de protection des données.</li>
+                                <li>Défis éthiques liés à l'utilisation de Copilot dans un contexte de sécurité et de confidentialité.</li>
+                            </ul>
+                            <p class="text-sm bg-green-50 p-3 rounded text-green-800"><i class="fas fa-laptop-code mr-2"></i><strong>Travaux pratiques :</strong> Présentation des mécanismes de confidentialité et de sécurité, suppression de l’historique de Copilot.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- TÉLÉCHARGEMENTS -->
+            <section class="bg-blue-50 rounded-xl p-8 border border-blue-100 text-center">
+                <h3 class="text-xl font-bold text-blue-900 mb-6">Supports de formation</h3>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <!-- Liens relatifs directs -->
+                    <a href="programme.pdf" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-md transition accessible-focus">
+                        <i class="fas fa-file-pdf mr-2"></i> Télécharger le Programme
+                    </a>
+                    <a href="livret-stagiaire.pdf" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 shadow-sm transition accessible-focus">
+                        <i class="fas fa-book-open mr-2"></i> Livret Stagiaire
+                    </a>
+                </div>
+            </section>
+
+            <!-- CARTE INTERACTIVE -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-8 w-1 bg-blue-600 rounded"></div>
+                    <h3 class="text-2xl font-bold text-gray-800">Lieu de la formation</h3>
+                </div>
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-inner h-80 relative">
+                    <!-- Utilisation d'un embed générique pour l'adresse spécifique -->
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0" 
+                        loading="lazy" 
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=fr&amp;q=14%20rue%20des%20reculettes%20Paris+(Lieu%20de%20Formation)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    </iframe>
+                </div>
+                <p class="mt-2 text-gray-600 flex items-center">
+                    <i class="fas fa-map-pin text-blue-600 mr-2"></i>
+                    <span>14 rue des reculettes, 75013 Paris</span>
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-8">
+        <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+            <div>
+                <h4 class="text-white text-lg font-semibold mb-4">Contact Formateur</h4>
+                <ul class="space-y-2">
+                    <li><i class="fas fa-envelope mr-2 w-5 text-center"></i> fortin.freddy@gmail.com</li>
+                    <li><i class="fas fa-phone mr-2 w-5 text-center"></i> 06 66 24 01 04</li>
+                </ul>
+            </div>
+            <div class="md:text-right">
+                <h4 class="text-white text-lg font-semibold mb-4">Engagements RSE</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition underline decoration-dotted">Politique d'inclusion</a></li>
+                    <li><a href="#" class="hover:text-white transition underline decoration-dotted">Référent Handicap</a></li>
+                    <li class="text-sm text-gray-500 mt-4">© 2024 Organisme de Formation. Tous droits réservés.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
